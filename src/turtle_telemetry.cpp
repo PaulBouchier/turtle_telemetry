@@ -36,7 +36,7 @@ private:
     debug_message.x = msg->x;
     debug_message.y = msg->y;
     debug_message.theta = msg->theta;
-    debug_message.linear_speed = msg->linear_velocity;
+    // debug_message.linear_speed = msg->linear_velocity;
     debug_message.angular_speed = msg->angular_velocity;
 
     // publish the debug message
