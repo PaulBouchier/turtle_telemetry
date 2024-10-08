@@ -25,8 +25,10 @@ install(TARGETS
   turtle_telemetry_node
   DESTINATION lib/${PROJECT_NAME})
 
-rosidl_target_interfaces(turtle_telemetry_node
-  ${PROJECT_NAME} "rosidl_typesupport_cpp")
+rosidl_get_typesupport_target(cpp_typesupport_target
+  ${PROJECT_NAME} rosidl_typesupport_cpp)
+
+target_link_libraries(turtle_telemetry_node "${cpp_typesupport_target}")
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
